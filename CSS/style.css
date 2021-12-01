@@ -1,0 +1,145 @@
+/*Globales*/
+html {
+  /* truquito para así poder hacer 1 rem igual a 10 pixel*/
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  /*elimina el styling default*/
+  margin: 0;
+  padding: 0;
+}
+/*lo he encontrado por internet para poder sumar automaticamente los paddings de los hijos*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.contenedor {
+  max-width: 120rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/*header*/
+header {
+  margin-top: 1rem;
+}
+/*section1*/
+header .header-section-uno {
+  border: 1rem solid black;
+  border-bottom: 0rem;
+  background-color: brown;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+header .header-section-uno div {
+  background-color: chocolate;
+  height: 2rem;
+}
+
+/*section2*/
+header .header-section-dos {
+  border: 1rem solid black;
+  background-color: cornflowerblue;
+  padding: 1rem;
+}
+
+header .header-section-dos div {
+  background-color: chocolate;
+  height: 2rem;
+}
+
+/*main*/
+main {
+  margin-top: 1rem;
+}
+
+/*main seccion 1*/
+main .main-section-uno {
+  border: 1rem solid black;
+  border-bottom: 0rem;
+  background-color: crimson;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+main .main-section-uno div,
+main .main-section-aside div {
+  background-color: chocolate;
+  height: 2rem;
+}
+/*main aside*/
+main .main-section-aside {
+  border: 1rem solid black;
+  background-color: cornflowerblue;
+  padding: 1rem;
+}
+
+main .main-section-aside div {
+  margin-top: 1rem;
+}
+
+main .main-section-aside div:nth-of-type(1) {
+  margin-top: 0rem;
+}
+
+/*footer*/
+footer {
+  margin-top: 1rem;
+}
+footer > div {
+  border: black 1rem solid;
+  background-color: darkred;
+  padding: 1rem;
+}
+
+footer > div div {
+  background-color: chocolate;
+  height: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  /*header section uno*/
+
+  header .header-section-uno {
+    display: flex;
+  }
+
+  header .header-section-uno div {
+    margin-top: 0rem;
+    margin-left: 1rem;
+  }
+  header .header-section-uno div:nth-of-type(1),
+  header .header-section-uno div:nth-of-type(3) {
+    flex: 2;
+  }
+  header .header-section-uno div:nth-of-type(2) {
+    flex: 4;
+  }
+
+  /*main*/
+  main .main-section-uno {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main .main-section-uno div:nth-child(5) {
+    grid-column: 1/3;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  main div {
+    display: flex;
+  }
+  main .main-section-uno {
+    flex: 4;
+    border-bottom: 1rem solid black;
+  }
+  main .main-section-aside {
+    border-left: 0rem;
+    flex: 2;
+  }
+}
